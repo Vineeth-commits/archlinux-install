@@ -268,8 +268,8 @@ swapon -a
 ```
 Set the timezone
 ```bash
-timedate set-timezone America/Costa_Rica
-systemctl enable systemd-timesynced
+timedatectl set-timezone America/Costa_Rica
+systemctl enable systemd-timesyncd
 ```
 Set the hostname
 ```bash
