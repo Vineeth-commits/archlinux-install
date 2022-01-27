@@ -75,7 +75,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 Check the file and see if everything is generated accordingly
 ```bash
-cat /mnt/etc
+cat /mnt/etc/fstab
 ```
 
 ## UEFI Method
@@ -98,6 +98,10 @@ Format the EFI partition
 ```bash
 mkfs.fat -F32 /dev/sda1
 ``` 
+Now we create a volume group for lvm
+```bash
+vgcreate volgroup0 /dev/sda2
+```
 Now we create a volume group for lvm
 ```bash
 vgcreate volgroup0 /dev/sda2
@@ -127,7 +131,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 Check the file and see if everything is generated accordingly
 ```bash
-cat /mnt/etc
+cat /mnt/etc/fstab
 ```
 
 # Installing Arch Linux
