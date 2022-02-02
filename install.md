@@ -98,9 +98,9 @@ Format the EFI partition
 ```bash
 mkfs.fat -F32 /dev/sda1
 ``` 
-Now we create a volume group for lvm
+Now we are creating a LVM disk. Change the disk partition name based on your selection from the command below
 ```bash
-vgcreate volgroup0 /dev/sda2
+pvcreate --dataalignment 1m /dev/sda1
 ```
 Now we create a volume group for lvm
 ```bash
